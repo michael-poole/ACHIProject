@@ -444,12 +444,21 @@ section {
 /*                   COMPONENTS                        */
 /*-----------------------------------------------------*/
 /* ----- Buttons----- */
+#addMore{
+    float: right;
+    clear: both;
+    padding-top: 10px;
+}
 .btn-group-toggle label.btn {
-    margin-bottom: 0;
+    margin-bottom: 5px;
     padding: 0;
     overflow: hidden;
     background-color: #6c757d !important;
+   
     border:none;
+}
+.btn-group-toggle label.btn:hover {
+    box-shadow: 2px 2px #6c757d;
 }
     
 .btn-group-toggle label.btn span {
@@ -466,7 +475,41 @@ section {
       display: block;
       color: #fff;
       background-color: #00b5e9;
+      padding-top: 15px;
+      padding-bottom: 15px;
+      
     }
+    @media screen and (max-width: 800px){
+        iframe{
+            width: 350px;
+            height: 450px;
+        }
+      
+      }
+  
+      @media screen and (max-width: 1399px){
+        iframe{
+            width: 360px;
+            height: 500px;
+        }
+      
+      }
+      @media screen and (max-width: 411px){
+        iframe{
+            
+            width: 350px;
+            height:360px;
+        }
+      
+      }
+      @media screen and (max-width: 375px){
+        iframe{
+            
+            width: 300px;
+            height:360px;
+        }
+      
+      }
 
 .au-btn {
     line-height: 45px;
@@ -4474,7 +4517,12 @@ section {
 .role.saved {
     background: #00b5e9;
 }
-
+.role.applied{
+    background: #2858be;
+}
+.role.unapplied{
+    background: #ffa037;
+}
 .role.open {
     background: #fa4251;
 }
@@ -4555,16 +4603,7 @@ section {
 
     
 }
-@media screen and  (max-width: 768px) {
-    .table-data2.table thead tr th:nth-child(4){
-        display: none;
-    }
-    .table-data2.table tbody tr td:nth-child(4) {
-        display: none;
-    }
 
-    
-}
 @media screen and (max-width: 360px) {
     .table-data2.table tr{
         display: flex; 
