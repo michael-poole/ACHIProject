@@ -1,116 +1,83 @@
-<!DOCTYPE html>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/3/w3.css">
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
-
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
-
-
-<html style="height:100;
-  background: url(collageFull.jpg) no-repeat center center fixed; 
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;">
-  
+<html>
 <head>
-  <title>Home</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard</title>
+  <link rel="stylesheet" type="text/css" href="./css/dashboard.css">
 </head>
-  
-<body style="height:100%;
-	background: rgba(16, 16, 105, 0.7) no-repeat center center fixed; 
-    -webkit-background-size: cover;
-	-moz-background-size: cover;
-	-o-background-size: cover;
-	background-size: cover;"> 
-
-<!-- Navigation -->
-<nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark" style="min-height:7vh;">
-	<a class="navbar-brand" href="#">Michael Poole</a>
-	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-		<span class="navbar-toggler-icon"></span>
-	</button>
-	
-	<div class="collapse navbar-collapse" id="navbarSupportedContent">
-		<ul class="navbar-nav mr-auto">
-		  <li class="nav-item active">
-			<a href="./index.html" class="nav-link">Home</a>
-		  </li>
-		  <li class="nav-item">
-			<a href="./background.html" class="nav-link">About Me</a>
-		  </li>
-		  <li class="nav-item">
-			<a href="./resume.html" class="nav-link">Resume</a>
-		  </li>
-		  <li class="nav-item">
-			<a href="./capstone.html" class="nav-link">Capstone</a>
-		  </li>
-          <li class="nav-item">
-			<a href="./portfolio.html" class="nav-link">Portfolio</a>
-		  </li>
-		  <li class="nav-item">
-			<a href="./contact.html" class="nav-link">Contact</a>
-		  </li>
-		</ul>
-	</div>
-</nav>
-
-
-<div  style="min-height: 93vh;
-	margin-top: 7vh">
-<br/>
-<label id="text" style="font-family:Times New Roman; font-size:6vmin ;color:#f5f5f5; margin-left:10px;"></label>
-<a id="mlink" href="./background.html" style="font-family:Times New Roman; font-size:6vmin ;color:#f5f5f5; margin-left:10px;"></a>
-  
-  <!-- What goes in the demo. -->
-<script>
-  
-  //Create sentence array
-  var sentences = new Array();
-  var txt1 = "print('Welcome Home!')";
-  var btxt1 = '';
-  var txt2 = "name = 'Michael Poole'";
-  var txt3 = "titleList = ['student', 'bookworm', 'adventurer', 'computer scientist', 'leader', 'camp counselor', 'friend']";
-  var txt4 = "passion = 'learning'";
-  var txt5 = "print('Click \"About Me\" to learn more!')";
-  var about = "About Me";
-  sentences.push(txt1);
-  sentences.push(btxt1);
-  sentences.push(txt2);
-  sentences.push(txt3);
-  sentences.push(txt4);
-  sentences.push(txt5);
-  sentences.push(about);
-	
-  var i = 0;
-  var si = 0;
-  var sentSpeed = 500;
-  var speed = 40; /* The speed/duration of the effect in milliseconds */
-  var currType = "charType";
-  function typeWriter() {
-	if (si == sentences.length - 1 && i < sentences[si].length){
-		document.getElementById("mlink").innerHTML += about[i];
-	  i++;
-	  setTimeout(typeWriter, speed);
-	}
-	else if (i < sentences[si].length){
-	  document.getElementById("text").innerHTML += sentences[si][i];
-	  i++;
-	  setTimeout(typeWriter, speed);
-	}
-	else if (si < sentences.length){
-	  si++;
-	  i = 0;
-	  document.getElementById("text").innerHTML += "<br/>";
-	  setTimeout(typeWriter, sentSpeed);
-	}
-  }
-  
-  window.onload = typeWriter;
-</script>
-</div>
+<body>
+    <div id="navbar_space">
+        <header id="my_navbar">
+            <div class="navdiv" id="fedx">
+                <span>
+                    <img id="fedex_logo" src="./images/FedExExpress.svg" alt="icon">
+                </span>
+            </div>
+            <div class="navdiv" id="title">
+                <text id="navbar_title">Manager Dashboard</text>
+            </div>
+            <div class="navdiv" id="user_div">
+                <a id="user_but" href="./employee_dash.html">
+                    <span>
+                        <img id="users_icon" src="./images/users.png" alt="icon">
+                    </span>
+                </a>
+            </div>
+        </header>
+    </div>
+    <div class="quarter" id="upper_left">
+        <a href="./job_view.html" class="panel" id="ulpanel">
+            View Jobs      
+        </a>
+        <div class="more_info">
+            <br>
+            <label>32 Current Job Postings</label>
+            <br>
+            <label>12 Unclaimed Job Postings</label>
+        </div>
+    </div>
+    <div class="quarter" id="upper_right">
+        <a href="./job_view.html" class="panel" id="urpanel">
+            Alerts!     
+        </a>
+        <div class="more_info">
+            <br>
+            <label>Unclaimed Job #475</label>
+            <br>
+            <label>Employee Dropped Job #313</label>
+            <br>
+            <label>Employee Dropped Job #671</label>
+        </div>
+    </div>
+    <div class="quarter" id="lower_left">
+        <a href="./make_jobs.html" class="panel" id="blpanel">
+            Make New Jobs      
+        </a>
+        <div class="more_info">
+            <br>
+            <form>
+                <span>
+                  Job name: <input type="text" name="fname">
+                  <input type="submit" value="Make Job">
+                </span>
+            </form>
+        </div>
+    </div>
+    <div class="quarter" id="lower_right">
+        <a href="./job_view.html" class="panel" id="brpanel">
+            Employees      
+        </a>
+        <div class="more_info">
+            <br>
+            <label>Percent Present: 85%</label>
+            <br>
+            <label>Percent On Time: 70%</label>
+        </div>
+    </div>
+    <div id="vertical_line">
+    </div>
+    <div id="horizontal_line">
+    </div>
 </body>
 </html>
