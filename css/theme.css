@@ -5235,6 +5235,27 @@ section {
 }
 
 /* ----- Alert ----- */
+
+/* Green */
+.alert-action {
+	background: #8ddba0 !important
+}
+
+/* Yellow */
+.alert-notice {
+	background: #ffe9a8 !important
+}
+
+/* Blue */
+.alert-opening {
+	background: #9fe9f4 !important
+}
+
+/* Red */
+.alert-urgent {
+	background: #ff9497 !important
+}
+
 .au-alert {
     border: 1px solid #fff;
     background: #fff;
