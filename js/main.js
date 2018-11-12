@@ -3,6 +3,7 @@ jQuery("#formButton .btn").click(function(){
   jQuery(this).toggleClass('active'); 
   
 });
+
 (function ($) {
     // USE STRICT
     "use strict";
