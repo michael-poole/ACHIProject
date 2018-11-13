@@ -108,6 +108,11 @@ body {
     margin-top: 2vh;
 }
 
+#ulpanel:hover{
+    cursor: pointer;
+    background-color: #ffd700;
+}
+
 #upper_right{
     height: 45vh;
     width: 49.2vw;
@@ -120,6 +125,11 @@ body {
 #urpanel{
     background-color: #63c76a;
     margin-top: 2vh;
+}
+
+#urpanel:hover{
+    cursor: pointer;
+    background-color: #32cd32;
 }
 
 #lower_left{
@@ -136,6 +146,11 @@ body {
     background-color: #00b5e9;
 }
 
+#blpanel:hover{
+    cursor: pointer;
+    background-color: #0094d5;
+}
+
 #lower_right{
     height: 45vh;
     width: 49.2vw;
@@ -148,6 +163,11 @@ body {
 
 #brpanel{
     background-color: #fa4251;
+}
+
+#brpanel:hover{
+    cursor: pointer;
+    background-color: #f5002d ;
 }
 
 #vertical_line{
@@ -168,24 +188,4 @@ body {
     margin-top: 45vh;
     overflow-x: hidden;
     background-color: #333333;
-}
-
-#ulpanel:hover{
-    cursor: pointer;
-    background-color: #d5a107;
-}
-
-#urpanel:hover{
-    cursor: pointer;
-    background-color: #51a657;
-}
-
-#blpanel:hover{
-    cursor: pointer;
-    background-color: #0097c3;
-}
-
-#brpanel:hover{
-    cursor: pointer;
-    background-color: #d13642;
 }
