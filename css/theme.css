@@ -4665,6 +4665,11 @@ section {
     margin-bottom: 20px;
 }
 
+tr.ryan:hover, tr.anwar:hover, tr.jazmin:hover, tr.caitlin:hover{
+    cursor: pointer;
+    background-color: #ccc;
+}
+
 
 .table-data2.table tbody tr td:last-child {
     -webkit-border-top-right-radius: 3px;

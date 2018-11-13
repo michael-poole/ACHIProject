@@ -306,7 +306,21 @@ jQuery("#formButton .btn").click(function(){
   }
 
  
- 
+  $("tr.ryan").on("click", function() {
+    window.location = "./employee_profile.html";
+  });
+
+  $("tr.anwar").on("click", function() {
+    window.location = "./employee_profile.html";
+  });
+
+  $("tr.jazmin").on("click", function() {
+    window.location = "./employee_profile.html";
+  });
+
+  $("tr.caitlin").on("click", function() {
+    window.location = "./employee_profile.html";
+  });
 
 
 
