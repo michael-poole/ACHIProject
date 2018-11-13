@@ -104,13 +104,13 @@ body {
 }
 
 #ulpanel{
-    background-color: #ffc107 ;
+    background-color: #ffd700 ;
     margin-top: 2vh;
 }
 
 #ulpanel:hover{
     cursor: pointer;
-    background-color: #d5a107;
+    background-color: #ffc107;
 }
 
 #upper_right{
@@ -129,7 +129,7 @@ body {
 
 #urpanel:hover{
     cursor: pointer;
-    background-color: #51a657;
+    background-color: #32cd32;
 }
 
 #lower_left{
@@ -148,7 +148,7 @@ body {
 
 #blpanel:hover{
     cursor: pointer;
-    background-color: #0097c3;
+    background-color: #0094d5;
 }
 
 #lower_right{
@@ -167,7 +167,7 @@ body {
 
 #brpanel:hover{
     cursor: pointer;
-    background-color: #d13642 ;
+    background-color: #f5002d ;
 }
 
 #vertical_line{
