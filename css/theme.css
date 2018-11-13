@@ -4661,6 +4661,9 @@ section {
     }
 }
 
+.d-flex .flex-nowrap {
+    margin-bottom: 20px;
+}
 
 
 .table-data2.table tbody tr td:last-child {
