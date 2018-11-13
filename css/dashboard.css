@@ -169,3 +169,23 @@ body {
     overflow-x: hidden;
     background-color: #333333;
 }
+
+#ulpanel:hover{
+    cursor: pointer;
+    background-color: #d5a107;
+}
+
+#urpanel:hover{
+    cursor: pointer;
+    background-color: #51a657;
+}
+
+#blpanel:hover{
+    cursor: pointer;
+    background-color: #0097c3;
+}
+
+#brpanel:hover{
+    cursor: pointer;
+    background-color: #d13642;
+}
