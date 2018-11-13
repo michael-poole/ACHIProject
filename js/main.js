@@ -307,19 +307,19 @@ jQuery("#formButton .btn").click(function(){
 
  
   $("tr.ryan").on("click", function() {
-    window.location = "./employee_profile.html";
+    window.location = "./employee_profile_ryan.html";
   });
 
   $("tr.anwar").on("click", function() {
-    window.location = "./employee_profile.html";
+    window.location = "./employee_profile_anwar.html";
   });
 
   $("tr.jazmin").on("click", function() {
-    window.location = "./employee_profile.html";
+    window.location = "./employee_profile_jazmin.html";
   });
 
   $("tr.caitlin").on("click", function() {
-    window.location = "./employee_profile.html";
+    window.location = "./employee_profile_caitlin.html";
   });
 
 
