@@ -9,6 +9,16 @@ html, body {
     position: relative;
 }
 
+body {
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.625;
+    color: #666;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
 #navbar_space{
     width: 100%;
     height: 8%;
@@ -41,7 +51,7 @@ html, body {
 }
 
 #navbar_title{
-    font-size: 3.5vh;
+    font-size: 3.0vh;
     font-weight: 600;
     color:#333333;  
 }
@@ -70,7 +80,7 @@ html, body {
 
 .panel{
     min-width: 45vw;
-    min-height: 30vh;
+    min-height: 28vh;
     text-align: center;
     vertical-align: middle;
     line-height: 30vh;
@@ -82,7 +92,7 @@ html, body {
 .more_info{
     min-height: 15vh;
     text-align: center;
-    font-size: 2.2vh;
+    font-size: 1.9vh;
 }
 
 #upper_left{
@@ -95,6 +105,7 @@ html, body {
 
 #ulpanel{
     background-color: #ffc107 ;
+    margin-top: 2vh;
 }
 
 #upper_right{
@@ -108,6 +119,7 @@ html, body {
 
 #urpanel{
     background-color: #63c76a;
+    margin-top: 2vh;
 }
 
 #lower_left{
@@ -140,7 +152,7 @@ html, body {
 
 #vertical_line{
     height: 100vh;
-    width: 1.6vw;
+    width: 5px;
     z-index: 1;
     margin-left: 49vw;
     position: fixed;
@@ -149,7 +161,7 @@ html, body {
 }
 
 #horizontal_line{
-    height: 2vh;
+    height: 5px;
     width: 100vw;
     z-index: 1;
     position: fixed;
