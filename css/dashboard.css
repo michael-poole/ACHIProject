@@ -110,7 +110,7 @@ body {
 
 #ulpanel:hover{
     cursor: pointer;
-    background-color: #ffd700;
+    background-color: #d5a107;
 }
 
 #upper_right{
@@ -129,7 +129,7 @@ body {
 
 #urpanel:hover{
     cursor: pointer;
-    background-color: #32cd32;
+    background-color: #51a657;
 }
 
 #lower_left{
@@ -148,7 +148,7 @@ body {
 
 #blpanel:hover{
     cursor: pointer;
-    background-color: #0094d5;
+    background-color: #0097c3;
 }
 
 #lower_right{
@@ -167,7 +167,7 @@ body {
 
 #brpanel:hover{
     cursor: pointer;
-    background-color: #f5002d ;
+    background-color: #d13642 ;
 }
 
 #vertical_line{
