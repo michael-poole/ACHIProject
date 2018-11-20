@@ -138,7 +138,68 @@
                                 <i class="zmdi zmdi-search"></i>
                             </button>
                         </form>
-
+                        <div class="btn-group">
+                            <button type="button" class="btn au-btn-filter dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <i class="zmdi zmdi-filter-list"></i>filters
+                            </button>
+                            <div class="dropdown-menu">
+                                <form class="px-4 py-3">
+                                    <div class="form-group">
+                                        <label><h5>Date Range</h5></label><br>
+                                        Start Date: &nbsp; <input id="startDate" width="276" >
+                                        &nbsp;
+                                        End Date:&nbsp; <input id="endDate" width="276" >
+                                    </div>
+                                    <script>
+                                        var today = new Date(new Date().getFullYear(), new Date().getMonth(), new Date().getDate());
+                                        $('#startDate').datepicker({
+                                            uiLibrary: 'bootstrap4',
+                                            iconsLibrary: 'fontawesome',
+                                            minDate: today,
+                                            maxDate: function () {
+                                                return $('#endDate').val();
+                                            }
+                                        });
+                                        $('#endDate').datepicker({
+                                            uiLibrary: 'bootstrap4',
+                                            iconsLibrary: 'fontawesome',
+                                            minDate: function () {
+                                                return $('#startDate').val();
+                                            }
+                                        });
+                                    </script>
+                                    <div class="form-group">
+                                        <label ><h5>Claimed/Unclaimed</h5></label>
+                                        <div class="form-check">
+                                            <div class="radio">
+                                                <label for="radio1" class="form-check-label ">
+                                                    <input type="radio" id="radio1" name="radios" value="option1" class="form-check-input">All
+                                                </label>
+                                            </div>
+                                            <div class="radio">
+                                                <label for="radio2" class="form-check-label ">
+                                                    <input type="radio" id="radio2" name="radios" value="option2" class="form-check-input">Unclaimed
+                                                </label>
+                                            </div>
+                                            <div class="radio">
+                                                <label for="radio3" class="form-check-label ">
+                                                    <input type="radio" id="radio3" name="radios" value="option3" class="form-check-input">Claimed
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <button type="button" style="background-color: blue"; class="au-btn-load" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                            <i class="zmdi zmdi-refresh"></i>&nbsp;Reset Filters
+                                        </button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>                              
+                        <div class="table-data__tool-right">
+                            <button class="au-btn au-btn-icon au-btn--green au-btn--small">
+                            <i class="zmdi zmdi-refresh"></i>Refresh</button>
+                        </div>
                     </div>
                 </div>
                 <div class="section__content section__content--p30">
@@ -147,93 +208,6 @@
                             <div class="col-lg-12">
 
                                 <!-- DATA TABLE -->
-
-
-                                <div class="table-data__tool">
-                                    <div class="table-data__tool-left">
-                                        <div class="btn-group">
-                                            <button type="button" class="btn au-btn-filter dropdown-toggle" data-toggle="dropdown"
-                                                aria-haspopup="true" aria-expanded="false">
-                                                <i class="zmdi zmdi-filter-list"></i>filters
-                                            </button>
-                                            <div class="dropdown-menu">
-                                                <form class="px-4 py-3">
-                                                    <div class="form-group">
-                                                        <label>
-                                                            <h5>Date Range</h5>
-                                                        </label><br>
-                                                        Start Date: &nbsp; <input id="startDate" width="276">
-                                                        &nbsp;
-                                                        End Date:&nbsp; <input id="endDate" width="276">
-
-
-
-                                                        <script>
-                                                            var today = new Date(new Date().getFullYear(), new Date().getMonth(), new Date().getDate());
-                                                    $('#startDate').datepicker({
-                                                        uiLibrary: 'bootstrap4',
-                                                        iconsLibrary: 'fontawesome',
-                                                        minDate: today,
-                                                        maxDate: function () {
-                                                            return $('#endDate').val();
-                                                        }
-                                                    });
-                                                    $('#endDate').datepicker({
-                                                        uiLibrary: 'bootstrap4',
-                                                        iconsLibrary: 'fontawesome',
-                                                        minDate: function () {
-                                                            return $('#startDate').val();
-                                                        }
-                                                    });
-                                                </script>
-
-
-                                                    </div>
-                                                    <div class="form-group">
-                                                        <label>
-                                                            <h5>Claimed/Unclaimed</h5>
-                                                        </label>
-                                                        <div class="form-check">
-                                                            <div class="radio">
-                                                                <label for="radio1" class="form-check-label ">
-                                                                    <input type="radio" id="radio1" name="radios" value="option1"
-                                                                        class="form-check-input">All
-                                                                </label>
-                                                            </div>
-                                                            <div class="radio">
-                                                                <label for="radio2" class="form-check-label ">
-                                                                    <input type="radio" id="radio2" name="radios" value="option2"
-                                                                        class="form-check-input">Unclaimed
-                                                                </label>
-                                                            </div>
-                                                            <div class="radio">
-                                                                <label for="radio3" class="form-check-label ">
-                                                                    <input type="radio" id="radio3" name="radios" value="option3"
-                                                                        class="form-check-input">Claimed
-                                                                </label>
-                                                            </div>
-                                                        </div>
-
-                                                    </div>
-                                                    <div class="form-group">
-                                                        <button type="button" style="background-color: blue" ; class="au-btn-load"
-                                                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                            <i class="zmdi zmdi-refresh"></i>&nbsp;Reset Filters
-                                                        </button>
-                                                    </div>
-
-                                            </div>
-                                        </div>
-                                    </div>
-
-
-
-
-                                    <div class="table-data__tool-right">
-                                        <button class="au-btn au-btn-icon au-btn--green au-btn--small">
-                                            <i class="zmdi zmdi-refresh"></i>Refresh</button>
-                                    </div>
-                                </div>
 
                                 <div class="table-responsive table-responsive-data2">
                                     <table id="managerTable" class="table table-data2">
