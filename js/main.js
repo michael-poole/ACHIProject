@@ -10,8 +10,8 @@ jQuery("#formButton .btn").click(function(){
     $(".animsition").animsition({
       inClass: 'fade-in',
       outClass: 'fade-out',
-      inDuration: 900,
-      outDuration: 900,
+      inDuration: 0,
+      outDuration: 0,
       linkElement: 'a:not([target="_blank"]):not([href^="#"]):not([class^="chosen-single"])',
       loading: true,
       loadingParentElement: 'html',

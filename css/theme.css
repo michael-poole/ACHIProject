@@ -157,7 +157,7 @@ strong {
 /*-----------------------------------------------------*/
 .header-5{
     padding-left: 20px;
-    padding-top: 40px;
+    padding-top: 20px; /* Changed the padding from 40 to eat some whitespace */
 
 }
 /* ----- Title ----- */
