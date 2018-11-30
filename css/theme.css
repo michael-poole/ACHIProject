@@ -4518,10 +4518,10 @@ section {
     background: #00b5e9;
 }
 .role.applied{
-    background: #2858be;
+    background: #42d667;
 }
 .role.unapplied{
-    background: #ffa037;
+    background: #00b5e9;
 }
 .role.open {
     background: #fa4251;
