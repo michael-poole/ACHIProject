@@ -1,0 +1,25 @@
+[debug] [2018-12-01T10:50:55.231Z] ----------------------------------------------------------------------
+[debug] [2018-12-01T10:50:55.233Z] Command:       /Users/kelahmcfarland/.nvm/versions/node/v11.0.0/bin/node /Users/kelahmcfarland/.nvm/versions/node/v11.0.0/bin/firebase serve --only hosting
+[debug] [2018-12-01T10:50:55.233Z] CLI Version:   6.1.1
+[debug] [2018-12-01T10:50:55.233Z] Platform:      darwin
+[debug] [2018-12-01T10:50:55.233Z] Node Version:  v11.0.0
+[debug] [2018-12-01T10:50:55.234Z] Time:          Sat Dec 01 2018 04:50:55 GMT-0600 (Central Standard Time)
+[debug] [2018-12-01T10:50:55.234Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2018-12-01T10:50:55.242Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2018-12-01T10:50:55.243Z] > authorizing via signed-in user
+[debug] [2018-12-01T10:50:55.243Z] [iam] checking project flexiblescheduler-fdf1e for permissions ["firebase.projects.get"]
+[debug] [2018-12-01T10:50:55.244Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/flexiblescheduler-fdf1e:testIamPermissions  
+
+[debug] [2018-12-01T10:50:55.703Z] <<< HTTP RESPONSE 200
+[debug] [2018-12-01T10:50:55.704Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/flexiblescheduler-fdf1e  
+ 
+[debug] [2018-12-01T10:50:56.047Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from '/Users/kelahmcfarland/Documents/MSU/Fall 2018/Advanced HCI/FlexibleWorker'...
+[info] 
+[debug] [2018-12-01T10:50:56.048Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/236803659888/clients/_:getWebAppConfig  
+ 
+[debug] [2018-12-01T10:50:56.630Z] <<< HTTP RESPONSE 200
+[info] i  hosting: Serving hosting files from: public
+[info] ✔  hosting: Local server: http://localhost:5000
