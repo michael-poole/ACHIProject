@@ -1,7 +1,0 @@
-service cloud.firestore {
-  match /databases/{database}/documents {
-    match /positions/{anything=**} {
-      allow read, write: if true;
-    }
-  }
-}
