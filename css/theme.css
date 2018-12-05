@@ -97,6 +97,34 @@ p {
     border-radius: 3px;
 }
 
+
+/* ----- Accordion ----- */
+/* No collapse transition timer */
+.collapsing {
+	transition: none !important;
+}
+
+/* Changing icon aligned to right side */
+.float-right {
+	float: right !important;
+}
+
+/* Larger clickable area and consistent anchor text color */
+.mb-0 > a {
+	display: block !important;
+	padding: 1px !important;
+	color: #666666 !important;
+}
+
+/* Smaller margins between alerts */
+.card {
+	margin-top: 10px !important;
+	margin-right: 10px !important;
+	margin-left: 10px !important;
+	margin-bottom: 10px !important;
+}
+
+
 /* ----- Typography ----- */
 body {
     font-family: "Poppins", sans-serif;
