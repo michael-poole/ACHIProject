@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+
+    <!-- Title Page-->
+    <title>Job Creation</title>
+    
+    <!-- Fontfaces CSS-->
+    <link href="../css/font-face.css" rel="stylesheet" media="all">
+    <link href="../vendor/font-awesome-5/css/fontawesome-all.min.css" rel="stylesheet" media="all">
+    <link href="../vendor/font-awesome-4.7/css/font-awesome.min.css" rel="stylesheet" media="all">
+    <link href="../vendor/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" media="all">
+
+    <!-- Bootstrap CSS-->
+    <link href="../vendor/bootstrap-4.1/bootstrap.min.css" rel="stylesheet" media="all">
+    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+    <link href="../dist/css/datepicker.min.css" rel="stylesheet" type="text/css">
+    <script src="../dist/js/datepicker.min.js"></script>
+    <script src="../dist/js/i18n/datepicker.en.js"></script>
+
+
+    <!--
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.4/css/bootstrap-datepicker.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.4/js/bootstrap-datepicker.min.js"></script>
+-->
+
+
+    <!-- Vendor CSS-->
+    <link href="../vendor/animsition/animsition.min.css" rel="stylesheet" media="all">
+    <link href="../vendor/bootstrap-progressbar/bootstrap-progressbar-3.3.4.min.css" rel="stylesheet" media="all">
+    <link href="../vendor/wow/animate.css" rel="stylesheet" media="all">
+    <link href="../vendor/css-hamburgers/hamburgers.min.css" rel="stylesheet" media="all">
+    <link href="../vendor/slick/slick.css" rel="stylesheet" media="all">
+    <link href="../vendor/select2/select2.min.css" rel="stylesheet" media="all">
+    <link href="../vendor/perfect-scrollbar/perfect-scrollbar.css" rel="stylesheet" media="all">
+
+
+
+    <!-- Main CSS-->
+    <link href="../css/theme.css" rel="stylesheet" media="all">
+
+
+
+
+</head>
+
+<body class="animsition">
+    <div class="page-wrapper">
+        <!-- HEADER MOBILE-->
+        <header class="header-mobile d-block d-lg-none">
+            <div class="header-mobile__bar">
+                <div class="container-fluid">
+                    <div class="header-mobile-inner">
+                        <a class="logo" href="../index.html">
+                            <img src="../images/FedExExpress.svg" alt="FedEx" />
+                        </a>
+                        <button class="hamburger hamburger--slider" type="button">
+                            <span class="hamburger-box">
+                                <span class="hamburger-inner"></span>
+                            </span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <nav class="navbar-mobile">
+                <div class="container-fluid">
+                    <ul class="navbar-mobile__list list-unstyled">
+
+                        <li>
+                            <a href="./job_view.html">
+                                <i class="fas fa-table"></i>Job Opportunities</a>
+                        </li>
+                        <li class="active">
+                            <a href="./make_jobs.html">
+                                <i class="far fa-edit"></i>Make Jobs</a>
+                        </li>
+
+                        <li>
+                            <a href="./manager_alerts.html">
+                                <i class="fas fa-bell"></i>Alerts</a>
+                        </li>
+
+                        <li>
+                            <a href="./employees.html">
+                                <i class="fas fa-users"></i>Employees</a>
+                        </li>
+
+
+                    </ul>
+                </div>
+            </nav>
+        </header>
+        <!-- MENU SIDEBAR-->
+        <aside class="menu-sidebar d-none d-lg-block">
+            <div class="logo">
+                <a href="../index.html">
+                    <img src="../images/FedExExpress.svg" alt="FedEx" />
+                </a>
+            </div>
+            <div class="menu-sidebar__content js-scrollbar1">
+                <nav class="navbar-sidebar">
+                    <ul class="list-unstyled navbar__list">
+                        <li>
+                            <a href="./job_view.html">
+                                <i class="fas fa-table"></i>Job Opportunities</a>
+                        </li>
+                        <li class="active">
+                            <a href="./make_jobs.html">
+                                <i class="far fa-edit"></i>Make Jobs</a>
+                        </li>
+
+                        <li>
+                            <a href="./manager_alerts.html">
+                                <i class="fas fa-bell"></i>Alerts</a>
+                        </li>
+
+                        <li>
+                            <a href="./employees.html">
+                                <i class="fas fa-users"></i>Employees</a>
+                        </li>
+
+
+                    </ul>
+                </nav>
+            </div>
+        </aside>
+        <!-- END MENU SIDEBAR-->
+        <div class="page-container">
+
+            <h3 class="title-5 m-b-35 header-5">Job Creation</h3>
+
+            <!-- MAIN CONTENT-->
+            <div class="main-content">
+                <div class="section__content section__content--p30">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-lg-12">
+
+                                <!-- DATA TABLE -->
+
+
+                                <div class="table-data__tool">
+                                    <div class="table-data__tool-left">
+
+
+                                    </div>
+                                    <div class="table-data__tool-right">
+                                        <button class="au-btn au-btn-icon au-btn--green au-btn--small">
+                                            <i class="zmdi zmdi-plus"></i>Add New Position</button>
+                                    </div>
+                                </div>
+
+
+                                <div class="card-body card-block">
+                                    <form action="" method="post" enctype="multipart/form-data" class="form-horizontal">
+
+                                        <div class="row form-group">
+                                            <div class="col col-md-3">
+                                                <label id="form_title" for="text-input" class="form-control-label">Title</label>
+                                            </div>
+                                            <div class="col-12 col-md-9">
+                                                <input type="text" id="title_input" name="text-input" class="form-control" list="positions" onchange="fillForm(this.value)" autocomplete="off">
+                                                <datalist id="positions"></datalist>
+                                            </div>
+                                        </div>
+                                        <div class="row form-group">
+                                            <div class="col col-md-3">
+                                                <label for="textarea-input" class=" form-control-label">Description</label>
+                                            </div>
+                                            <div class="col-12 col-md-9">
+                                                <textarea name="textarea-input" id="description_input" rows="9" class="form-control"></textarea>
+                                            </div>
+                                        </div>
+                                        <div class="row form-group">
+                                            <div class="col col-md-3">
+                                                <label for="text-input" class="form-control-label">Job Type</label>
+                                            </div>
+                                            <div class="col-12 col-md-9">
+                                                <input id="type_input" type="text" id="title_input" name="text-input" class="form-control">
+                                            </div>
+                                        </div>
+                                        <div class="row form-group">
+                                            <div class="col col-md-3">
+                                                <label for="certifications" class="form-control-label">Certifications</label>
+                                            </div>
+                                            <div class="col-4">
+                                                <div class="form-group">
+                                                    <label style="font-weight: bold;font-size: 14px;">All Certifications</label>
+                                                    <input type="text" id="add_cert" name="text-input" class="form-control" onkeyup="searchCerts(this)" autocomplete="off" placeholder="Search All">
+                                                    
+
+                                                    <select multiple class="form-control" id="all_certs" onchange="addToRec(this)">
+                                                    </select>
+
+                                                </div>
+                                            </div>
+                                            <div class="col-1">
+                                                <br>
+                                                <br>
+                                                <br>
+                                                <br>
+                                                <div class="icon_switch">
+                                                    <i class="fas fa-exchange-alt" style="padding-left:20px;"></i>
+                                                </div>
+                                            </div>
+                                            <div class="col-4">
+                                                <div class="form-group">
+                                                    <label style="font-weight: bold;font-size: 14px;">Selected Certifications</label>
+                                                    <input type="text" id="remove_cert" name="text-input" class="form-control" autocomplete="off" placeholder="Search Selected">
+
+                                                    <select multiple class="form-control" id="rec_certs" onchange="removeFromRec(this)">
+                                                    </select>
+                                                </div>
+                                            </div>
+
+
+                                        </div>
+
+
+                                        <div class="row form-group">
+                                            <div class="col col-md-3">
+                                                <label for="select" class=" form-control-label">Location</label>
+                                            </div>
+                                            <div class="col-11 col-md-9">
+                                                <select name="select" id="location" class="form-control" onclick="getLocations(this)">
+                                                </select>
+                                            </div>
+                                        </div>
+
+                                        <div class="row form-group">
+                                            <div class="col col-md-3">
+                                                <label class=" form-control-label">Date & Time</label>
+                                            </div>
+                                        
+                                            <div class="col-md-9" id='divdate'>
+                                                <input type='text' id='date' class="datepicker-here form-control" style="width:100%;" placeholder="Pick the date and time" />
+                                            </div>
+                                            <div class="col-md-12" style="text-align: right">
+                                                <button type="button" style="width: 30px;height: 30px;text-align: center;font-size: 12px;line-height: 1.428571429;border-radius: 15px;margin:10px 0;" class="btn-success" onclick="addDate()" id="addDatePick"> <i class="zmdi zmdi-plus"></i></button>
+                                            </div>
+
+
+                                        </div>
+                                        
+
+
+                                        <script type="text/javascript">
+                                            // Create start date
+                                            var start = new Date(),
+                                                prevDay,
+                                                startHours = 0;
+
+                                            start.setHours(8);
+                                            start.setMinutes(0);
+                                            // Initialization
+                                            $('.datepicker-here').datepicker({
+                                                autoClose: true,
+                                                multipleDatesSeparator: " , ",
+                                                navTitles: {
+                                                    days: 'MM <i>yyyy</i>',
+                                                    months: 'yyyy',
+                                                    years: 'yyyy1 - yyyy2'
+                                                },
+                                                language: {
+                                                    days: ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
+                                                    daysShort: ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'],
+                                                    daysMin: ['Su', 'Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa'],
+                                                    months: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
+                                                    monthsShort: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+                                                    today: 'Today',
+                                                    clear: 'Clear',
+                                                    dateFormat: 'mm/dd/yyyy',
+                                                    timeFormat: 'hh:ii aa',
+                                                    firstDay: 0
+                                                },
+                                                timepicker: true,
+                                                timeFormat: "hh:ii AA",
+                                                startDate: start,
+                                                minHours: startHours,
+                                                maxHours: 23,
+
+
+
+                                                onSelect: function(fd, d, picker) {
+                                                    // Do nothing if selection was cleared
+                                                    if (!d) return;
+                                                    //console.log(fd);
+                                                    //var day = new Date(d);
+                                                    //console.log(day.getDate());
+                                                },
+                                            })
+                                             $('.datepicker-here').datepicker()
+                                           
+                                            function addDate() {
+                                                var option = document.createElement('input');
+                                                var divEl = document.getElementById('divdate');
+                                                option.className = 'datepicker-here form-control';
+                                                option.placeholder = "Pick the date and time";
+                                                divEl.appendChild(option);
+                                            }
+                                          
+
+                                        </script>
+
+
+
+
+
+
+
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="card-footer" style="text-align: right;">
+        <button id="form_save" type="submit" class="btn btn-primary btn-sm">
+            <i class="far fa-save"></i> &nbsp;Save
+        </button>
+        <button id="form_save_publish" type="submit" class="btn btn-primary btn-sm">
+            <i class="zmdi zmdi-upload"></i>&nbsp;&nbsp;Publish
+        </button>
+
+        <!-- Jquery JS-->
+        <script src="../vendor/jquery-3.2.1.min.js"></script>
+
+
+        <!-- Bootstrap JS-->
+        <script src="../vendor/bootstrap-4.1/popper.min.js"></script>
+        <script src="../vendor/bootstrap-4.1/bootstrap.min.js"></script>
+        <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+        <script src="../js/moment.js"></script>
+
+
+        <!--        <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.4/js/bootstrap-datepicker.min.js"></script>-->
+
+        <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+        <script src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js"></script>
+        <!-- Vendor JS       -->
+        <script src="../vendor/slick/slick.min.js">
+        </script>
+        <script src="../vendor/wow/wow.min.js"></script>
+        <script src="../vendor/animsition/animsition.min.js"></script>
+        <script src="../vendor/bootstrap-progressbar/bootstrap-progressbar.min.js">
+        </script>
+        <script src="../vendor/counter-up/jquery.waypoints.min.js"></script>
+        <script src="../vendor/counter-up/jquery.counterup.min.js">
+        </script>
+        <script src="../vendor/circle-progress/circle-progress.min.js"></script>
+        <script src="../vendor/perfect-scrollbar/perfect-scrollbar.js"></script>
+        <script src="../vendor/chartjs/Chart.bundle.min.js"></script>
+        <script src="../vendor/select2/select2.min.js">
+        </script>
+
+        <!-- Main JS-->
+        <script src="../js/main.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/5.5.5/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/5.5.5/firebase-firestore.js"></script>
+
+        <script src="../js/app.js"></script>
+
+    </div>
+
+</body>
+
+</html>
+<!-- end document-->
