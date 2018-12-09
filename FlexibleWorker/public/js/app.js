@@ -4,11 +4,12 @@ var dataList = document.getElementById('positions');
 var input = document.getElementById('title_input');
 var description = document.getElementById('description_input');
 var type = document.getElementById('type_input');
+var sellocation = $('#location option:selected').text();
 var all_cert_select = document.getElementById('all_certs');
 var rec_cert_select = document.getElementById('rec_certs');
 var all_cert_search = document.getElementById('add_cert');
 var rec_cert_search = document.getElementById('remove_cert');
-var searchList = document.getElementById('certifications');
+var locations = document.getElementById('location');
 
 //Global variables
 var allPositions = [];
@@ -32,20 +33,23 @@ var db = firebase.firestore();
 db.settings({
     timestampsInSnapshots: true
 });
-
-
-
-//Positions
+var init = function(){
+    $('#PositionForm').submit(save);
+     
+};
+ $(document).ready(init);
+$(input).on('keydown', function(e){
+    //Positions
 db.collection("positions").get().then((querySnapshot) => {
     querySnapshot.forEach((doc) => {
-        //        console.log(`${doc.id} => ${doc.data()}`);
         var jsonOptions = jQuery.parseJSON(JSON.stringify(doc.data()));
-
+        
         var inList = false;
         for (var k in jsonOptions) {
 
             var option = document.createElement('option');
             option.value = jsonOptions['title'];
+            console.log(jsonOptions['title']);
             for (var j in dataList.options) {
                 if (dataList.options[j].value == jsonOptions['title']) {
                     inList = true;
@@ -80,33 +84,8 @@ db.collection("positions").get().then((querySnapshot) => {
 
 
 });
-
-
-
-//Certifications DataList
-
-//all_cert_search.oninput = function (val) {
-//    searchList.empty;
-//    var inSearchList = false;
-//
-//    for (var k in allCertifications) {
-//        var option = document.createElement('option');
-//        option.value = allCertifications[k];
-//
-//        for (var j in searchList.options) {
-//            if (searchList.options[j].value == allCertifications[j]) {
-//                inSearchList = true;
-//            }
-//        }
-//        if (!inSearchList) {
-//            searchList.empty;
-//            searchList.appendChild(option);
-//             console.log(searchList.options[k].value);
-//            
-//        }
-//       
-//
-//}}
+    
+})
 
 
 function fillForm(val) {
@@ -116,6 +95,7 @@ function fillForm(val) {
             elementIndex = k;
         }
     }
+    input.value = val;
     description.value = allPositions[elementIndex].desc;
     type.value = allPositions[elementIndex].type;
     //console.log(allPositions[elementIndex].certs);
@@ -125,7 +105,7 @@ function fillForm(val) {
 
     db.collection("qualifications").get().then((querySnapshot) => {
         querySnapshot.forEach((doc) => {
-
+          
             var jsonOptions = jQuery.parseJSON(JSON.stringify(doc.data()));
             for (var k in jsonOptions) {
                 allCertifications.push(jsonOptions['qualName']);
@@ -160,6 +140,7 @@ function addToRec(val) {
     }
     if (!isPresent) {
         rec_cert_select.options.add(option);
+        rec_cert_select.refresh;
 
     }
     all_cert_select.options.remove(valIndex);
@@ -183,11 +164,135 @@ function removeFromRec(val) {
         all_cert_select.refresh;
     }
 }
-//Search for certifications
 
-function searchCerts(val) {
-    console.log('in here');
-    console.log(searchList);
+//Location
+function getLocations(val) {
+    var isPresent = false;
+    db.collection("locations").get().then((querySnapshot) => {
+        querySnapshot.forEach((doc) => {
+
+            var jsonOptions = jQuery.parseJSON(JSON.stringify(doc.data()));
+            for (var k in jsonOptions) {
+                var option = document.createElement('option');
+                option.value = jsonOptions['name'];
+                option.text = jsonOptions['name'];
+
+                for (var i = 0; i < locations.length; i++) {
+                    if (locations.options[i].value == option.value) {
+                        isPresent = true;
+                    }
+                }
+                if (!isPresent) {
+                    locations.options.add(option);
+                }
+
+            }
+        });
+    });
 
 }
-//DatePicker
+//$("#PostingForm").submit(function(e){
+//    return false;
+//});
+$( "#PostingFormn" ).submit(function( event ) {
+  event.preventDefault();
+});
+$( "#form_save" ).click(function() {
+    
+     var title = $('#title_input').val();
+        var description = $('#description_input').val();
+    var certifications = [];
+    for(var i = 0; i < rec_cert_select.length; i++){
+        certifications.push(rec_cert_select.options[i].value);
+    }
+    var location = $('#location').find(':selected').text();
+    var date = [];
+    $('#divdate div .datetimepicker-input').each(function (){
+        if($(this).val != " "){
+            date.push($(this).val());
+        }
+        
+    })
+    for(var i = 0; i < date.length; i++){
+        var data={};
+        data['title'] = title;
+        data['description'] = description;
+        data['certifications'] = certifications;
+        data['location'] = location;
+        data['date'] = date[i];
+        data['isPublished'] = false;
+         db.collection("jobs").add(data).then(function (result) {
+                
+             alert("Job Saved Successfully!");
+             $( "#PostingForm" ).submit();
+        })
+        .catch(function (error) {
+     alert("failed to save job");
+        });
+    }
+    
+    });
+$( "#form_save_publish" ).click(function() {
+    
+     var title = $('#title_input').val();
+        var description = $('#description_input').val();
+    var certifications = [];
+    for(var i = 0; i < rec_cert_select.length; i++){
+        certifications.push(rec_cert_select.options[i].value);
+    }
+    var location = $('#location').find(':selected').text();
+    var date = [];
+    $('#divdate div .datetimepicker-input').each(function (){
+        if($(this).val != " "){
+            date.push($(this).val());
+        }
+        
+    })
+    for(var i = 0; i < date.length; i++){
+        var data={};
+        data['title'] = title;
+        data['description'] = description;
+        data['certifications'] = certifications;
+        data['location'] = location;
+        data['date'] = date[i];
+        data['isPublished'] = true;
+         db.collection("jobs").add(data).then(function (result) {
+                
+             alert("Job Published Successfully!");
+             $( "#PostingForm" ).submit();
+        })
+        .catch(function (error) {
+     alert("failed to save job");
+        });
+    }
+    
+    });
+    
+
+
+
+ // add position
+    var save = function (e) {
+        e.preventDefault();
+
+        var modal = $('#positionModal');
+        var id = modal.data('id');
+        var data = {};
+        //read values from form inputs
+        modal.find('input[data-prop]').each(function () {
+            var inp = $(this);
+            data[inp.data('prop')] = inp.val();
+        });
+        
+
+        // update or add
+        db.collection("positions").add(data).then(function (result) {
+            // hide modal and reload list
+            modal.modal('hide');
+            location.reload();
+        })
+        .catch(function (error) {
+     alert("failed to add positon");
+        });
+    }
+    
