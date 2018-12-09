@@ -215,11 +215,11 @@ $( "#form_save" ).click(function() {
     })
     for(var i = 0; i < date.length; i++){
         var data={};
-        data['title'] = title;
+        data['jobTitle'] = title;
         data['description'] = description;
-        data['certifications'] = certifications;
-        data['location'] = location;
-        data['date'] = date[i];
+        data['jobCertifications'] = certifications;
+        data['jobAddress'] = location;
+        data['jobDate'] = date[i];
         data['isPublished'] = false;
          db.collection("jobs").add(data).then(function (result) {
                 
@@ -250,11 +250,11 @@ $( "#form_save_publish" ).click(function() {
     })
     for(var i = 0; i < date.length; i++){
         var data={};
-        data['title'] = title;
+        data['jobTitle'] = title;
         data['description'] = description;
-        data['certifications'] = certifications;
-        data['location'] = location;
-        data['date'] = date[i];
+        data['jobCertifications'] = certifications;
+        data['jobAddress'] = location;
+        data['jobDate'] = date[i];
         data['isPublished'] = true;
          db.collection("jobs").add(data).then(function (result) {
                 
