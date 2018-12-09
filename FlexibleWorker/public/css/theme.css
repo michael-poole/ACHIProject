@@ -637,7 +637,7 @@ section {
 }
 
 .au-btn-filter {
-    font-size: 14px;
+    font-size: 16x;
     color: #808080;
     background: #fff;
     -webkit-border-radius: 3px;
@@ -658,7 +658,7 @@ section {
 .au-btn--small {
     padding: 0 20px;
     line-height: 40px;
-    font-size: 14px;
+    font-size: 16px; /* Changed the font size from 14 */
 }
 
 /*Page Loader*/
@@ -902,6 +902,7 @@ section {
 
 .au-input--xl {
     min-width: 935px;
+    font-size: 16px; /* Changed the font size from 14 */
 }
 
 @media (max-width: 1600px) {
@@ -4499,14 +4500,14 @@ section {
 }
 .table
 .table-data__info h6 {
-    font-size: 14px;
+    font-size: 16px; /* Changed the font size from 14 */
     color: #808080;
     text-transform: capitalize;
     font-weight: 400;
 }
 
 .table-data__info span a {
-    font-size: 12px;
+    font-size: 16px; /* Changed the font size from 14 */
     color: #999;
 }
 
@@ -4609,7 +4610,7 @@ section {
 }
 
 .table-data2.table thead th {
-    font-size: 12px;
+    font-size: 14px;
     color: #555;
     text-transform: uppercase;
     border: none;
@@ -4728,7 +4729,7 @@ tr.ryan:hover, tr.anwar:hover, tr.jazmin:hover, tr.caitlin:hover{
 }
 
 .table-data2.table tbody td {
-    font-size: 14px;
+    font-size: 16px; /* Changed the font size from 14 */
     color: #808080;
     vertical-align: middle;
     padding: 25px 40px;
