@@ -8,26 +8,25 @@
 
 
     <!-- Title Page-->
-    <title>Flexible Worker</title>
-    
+    <title>Job Creation</title>
+
     <!-- Fontfaces CSS-->
     <link href="../css/font-face.css" rel="stylesheet" media="all">
     <link href="../vendor/font-awesome-5/css/fontawesome-all.min.css" rel="stylesheet" media="all">
     <link href="../vendor/font-awesome-4.7/css/font-awesome.min.css" rel="stylesheet" media="all">
     <link href="../vendor/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" media="all">
 
-    <!-- Bootstrap CSS-->
+     <!-- Bootstrap CSS-->
     <link href="../vendor/bootstrap-4.1/bootstrap.min.css" rel="stylesheet" media="all">
-    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
-    <link href="../dist/css/datepicker.min.css" rel="stylesheet" type="text/css">
-    <script src="../dist/js/datepicker.min.js"></script>
-    <script src="../dist/js/i18n/datepicker.en.js"></script>
+
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.0.1/js/tempusdominus-bootstrap-4.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.0.1/css/tempusdominus-bootstrap-4.min.css" />
 
 
-    <!--
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.4/css/bootstrap-datepicker.css" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.4/js/bootstrap-datepicker.min.js"></script>
--->
+
+
 
 
     <!-- Vendor CSS-->
@@ -43,6 +42,8 @@
 
     <!-- Main CSS-->
     <link href="../css/theme.css" rel="stylesheet" media="all">
+   
+
 
 
 
@@ -129,13 +130,46 @@
                 </nav>
             </div>
         </aside>
+          <!-- Position Form -->
+                                <form id="PositionForm">
+                                    <div class="modal fade" id="positionModal" tabindex="-1" role="dialog" aria-hidden="true">
+                                        <div class="modal-dialog" role="document">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title"></h5>
+                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <div class="form-group">
+                                                        <label>Position Title</label>
+                                                        <input type="text" class="form-control" data-prop="title" placeholder="Enter Position Title" maxlength="100"/>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label>Description</label>
+                                                        <input type="text-area" class="form-control" data-prop="description" placeholder="Enter Job Description" maxLines=9 />
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label>Job Type</label>
+                                                        <input type="text" class="form-control" data-prop="jobType" placeholder="Enter Job Type" maxlength="100"/>
+                                                    </div>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                                    <button type="submit" class="btn btn-primary">Save Position</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+
+
         <!-- END MENU SIDEBAR-->
         <div class="page-container">
 
             <h3 class="title-5 m-b-35 header-5">Job Creation</h3>
 
             <!-- MAIN CONTENT-->
-            <div class="main-content">
+            <div class="main-content" style="min-height: 80vh; padding-bottom:0;">
                 <div class="section__content section__content--p30">
                     <div class="container-fluid">
                         <div class="row">
@@ -150,18 +184,18 @@
 
                                     </div>
                                     <div class="table-data__tool-right">
-                                        <button class="au-btn au-btn-icon au-btn--green au-btn--small">
+                                        <button class="au-btn au-btn-icon au-btn--green au-btn--small" data-toggle="modal" data-target="#positionModal">
                                             <i class="zmdi zmdi-plus"></i>Add New Position</button>
                                     </div>
                                 </div>
-
+                              
 
                                 <div class="card-body card-block">
-                                    <form action="" method="post" enctype="multipart/form-data" class="form-horizontal">
+                                    <form id="PostingForm" enctype="multipart/form-data" class="form-horizontal">
 
                                         <div class="row form-group">
-                                            <div class="col col-md-3">
-                                                <label id="form_title" for="text-input" class="form-control-label">Title</label>
+                                            <div class="col col-md-2 col-lg-3">
+                                                <label  style="font-size: 16px;"id="form_title" for="text-input" class="form-control-label">Title</label>
                                             </div>
                                             <div class="col-12 col-md-9">
                                                 <input type="text" id="title_input" name="text-input" class="form-control" list="positions" onchange="fillForm(this.value)" autocomplete="off">
@@ -169,62 +203,68 @@
                                             </div>
                                         </div>
                                         <div class="row form-group">
-                                            <div class="col col-md-3">
-                                                <label for="textarea-input" class=" form-control-label">Description</label>
+                                            <div class="col col-md-2 col-lg-3">
+                                                <label style="font-size: 16px;" for="textarea-input" class=" form-control-label">Description</label>
                                             </div>
                                             <div class="col-12 col-md-9">
                                                 <textarea name="textarea-input" id="description_input" rows="9" class="form-control"></textarea>
                                             </div>
                                         </div>
                                         <div class="row form-group">
-                                            <div class="col col-md-3">
-                                                <label for="text-input" class="form-control-label">Job Type</label>
+                                            <div class="col col-md-2 col-lg-3">
+                                                <label style="font-size: 16px;" for="text-input" class="form-control-label">Job Type</label>
                                             </div>
                                             <div class="col-12 col-md-9">
                                                 <input id="type_input" type="text" id="title_input" name="text-input" class="form-control">
                                             </div>
                                         </div>
+
                                         <div class="row form-group">
-                                            <div class="col col-md-3">
-                                                <label for="certifications" class="form-control-label">Certifications</label>
+                                            <div class="col col-md-2 col-lg-3">
+                                                <label style="font-size: 16px;" for="certifications" class="form-control-label">Certifications</label>
                                             </div>
-                                            <div class="col-4">
-                                                <div class="form-group">
+                                           
+                                                <div class="col-12 col-md-4 col-lg-4">
+
                                                     <label style="font-weight: bold;font-size: 14px;">All Certifications</label>
-                                                    <input type="text" id="add_cert" name="text-input" class="form-control" onkeyup="searchCerts(this)" autocomplete="off" placeholder="Search All">
-                                                    
 
-                                                    <select multiple class="form-control" id="all_certs" onchange="addToRec(this)">
+
+
+                                                    <select multiple style="width:100%;" class="form-control certs" id="all_certs" onchange="addToRec(this)">
                                                     </select>
 
+
+                                                </div>
+
+
+                                            <div class="col-md-1 col-lg-1" style="text-align: center">
+                                                <br>
+
+                                                <div class=" d-none d-md-inline d-lg-inline"id="icon_switch" style="text-align: center">
+                                                    <i class="fas fa-exchange-alt" style="margin-top: 40px; font-size:18px;"></i>
                                                 </div>
                                             </div>
-                                            <div class="col-1">
-                                                <br>
-                                                <br>
-                                                <br>
-                                                <br>
-                                                <div class="icon_switch">
-                                                    <i class="fas fa-exchange-alt" style="padding-left:20px;"></i>
-                                                </div>
-                                            </div>
-                                            <div class="col-4">
-                                                <div class="form-group">
+
+                                                <div class="col-12 col-md-4 col-lg-4">
+
                                                     <label style="font-weight: bold;font-size: 14px;">Selected Certifications</label>
-                                                    <input type="text" id="remove_cert" name="text-input" class="form-control" autocomplete="off" placeholder="Search Selected">
 
-                                                    <select multiple class="form-control" id="rec_certs" onchange="removeFromRec(this)">
+
+                                                    <select multiple style="width:100%;" class="form-control certs" id="rec_certs" onchange="removeFromRec(this)">
                                                     </select>
+
                                                 </div>
                                             </div>
 
 
-                                        </div>
+
+                                   
+
 
 
                                         <div class="row form-group">
-                                            <div class="col col-md-3">
-                                                <label for="select" class=" form-control-label">Location</label>
+                                            <div class="col col-md-2 col-lg-3">
+                                                <label style="font-size: 16px;" for="select" class=" form-control-label">Location</label>
                                             </div>
                                             <div class="col-11 col-md-9">
                                                 <select name="select" id="location" class="form-control" onclick="getLocations(this)">
@@ -233,87 +273,94 @@
                                         </div>
 
                                         <div class="row form-group">
-                                            <div class="col col-md-3">
-                                                <label class=" form-control-label">Date & Time</label>
-                                            </div>
-                                        
-                                            <div class="col-md-9" id='divdate'>
-                                                <input type='text' id='date' class="datepicker-here form-control" style="width:100%;" placeholder="Pick the date and time" />
-                                            </div>
-                                            <div class="col-md-12" style="text-align: right">
-                                                <button type="button" style="width: 30px;height: 30px;text-align: center;font-size: 12px;line-height: 1.428571429;border-radius: 15px;margin:10px 0;" class="btn-success" onclick="addDate()" id="addDatePick"> <i class="zmdi zmdi-plus"></i></button>
+                                            <div class="col col-md-2 col-lg-3">
+                                                <label style="font-size: 18px;" class=" form-control-label">Date & Time</label>
                                             </div>
 
+                                            <div class="col-md-9" id='divdate' style="margin-left: 0px;padding-left: 0px;">
+
+                                                <div class="col-md-12 input-group date" style="padding-right: 0px;" id="datetimepicker1" data-target-input="nearest">
+                                                    <input type="text" class="form-control datetimepicker-input" data-target="" />
+                                                    <div class="input-group-append" data-target="#datetimepicker1" data-toggle="datetimepicker">
+                                                        <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-11 col-md-12 input-group date rid template" style="display: none; margin-top:10px;" data-target-input="nearest">
+                                                    <br>
+                                                    <input type="text" class="form-control datetimepicker-input" data-target="" />
+                                                    <div class="input-group-append" data-toggle="datetimepicker">
+                                                        <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+                                                    </div>
+
+
+                                                </div>
+
+                                            </div>
+                                            <div class="col-md-2 col-lg-3" style="text-align:right">
+
+                                            </div>
+                                            <div class="col-md-9 col-lg-9" style="text-align:left">
+                                                <button type="button" style="width: 40px;height: 40px;text-align: center;font-size: 20px;line-height: 1.428571429;border-radius: 25px;margin:10px 0;" class="btn-primary" id="addDatePick"> <i class="zmdi zmdi-plus"></i></button>
+                                            </div>
+
+
+
+
+
+
+
+
+                                            <script type="text/javascript">
+                                                $(".input-group.date.remove-date button").click(function() {
+                                                    console.log('yes');
+
+                                                });
+
+                                                $(function() {
+                                                    var count = 1;
+                                                    $("#addDatePick").click(function() {
+                                                        var examDateClonedObj = $(".template").clone();
+                                                        $(examDateClonedObj).find('input').attr('id', 'datetimepicker' + (count + 1));
+                                                        $(examDateClonedObj).attr('id', 'date' + (count + 1));
+
+                                                        $(examDateClonedObj).removeClass("template");
+                                                        $(examDateClonedObj).find('input').attr('data-target', '#datetimepicker' + (count + 1));
+                                                        $(examDateClonedObj).find('div:first').attr('data-target', '#datetimepicker' + (count + 1));
+                                                        //$(examDateClonedObj).find('div.rid').attr('data-target', '#datetimepicker'+(count+1));
+                                                        var removeButton = $('<div class="col-1 col-md-1"><button type="button" class="btn btn-danger remove-date"><i class="fa fa-remove"></i></div>');
+                                                        removeButton.click(function() {
+                                                            $(this).parent().remove();
+                                                        });
+                                                        $(examDateClonedObj).append(removeButton).end();
+
+                                                        $(examDateClonedObj).appendTo("#divdate");
+                                                        count = count + 1;
+                                                        //                                                        console.log( $(examDateClonedObj).find('div:first').attr('data-target'));
+
+                                                        $(examDateClonedObj).show();
+
+                                                    });
+
+
+                                                });
+
+
+
+
+
+                                                $('body').on('focus', ".datetimepicker-input", function() {
+                                                    $(this).datetimepicker();
+                                                });
+
+                                            </script>
 
                                         </div>
-                                        
-
-
-                                        <script type="text/javascript">
-                                            // Create start date
-                                            var start = new Date(),
-                                                prevDay,
-                                                startHours = 0;
-
-                                            start.setHours(8);
-                                            start.setMinutes(0);
-                                            // Initialization
-                                            $('.datepicker-here').datepicker({
-                                                autoClose: true,
-                                                multipleDatesSeparator: " , ",
-                                                navTitles: {
-                                                    days: 'MM <i>yyyy</i>',
-                                                    months: 'yyyy',
-                                                    years: 'yyyy1 - yyyy2'
-                                                },
-                                                language: {
-                                                    days: ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
-                                                    daysShort: ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'],
-                                                    daysMin: ['Su', 'Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa'],
-                                                    months: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
-                                                    monthsShort: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
-                                                    today: 'Today',
-                                                    clear: 'Clear',
-                                                    dateFormat: 'mm/dd/yyyy',
-                                                    timeFormat: 'hh:ii aa',
-                                                    firstDay: 0
-                                                },
-                                                timepicker: true,
-                                                timeFormat: "hh:ii AA",
-                                                startDate: start,
-                                                minHours: startHours,
-                                                maxHours: 23,
-
-
-
-                                                onSelect: function(fd, d, picker) {
-                                                    // Do nothing if selection was cleared
-                                                    if (!d) return;
-                                                    //console.log(fd);
-                                                    //var day = new Date(d);
-                                                    //console.log(day.getDate());
-                                                },
-                                            })
-                                             $('.datepicker-here').datepicker()
-                                           
-                                            function addDate() {
-                                                var option = document.createElement('input');
-                                                var divEl = document.getElementById('divdate');
-                                                option.className = 'datepicker-here form-control';
-                                                option.placeholder = "Pick the date and time";
-                                                divEl.appendChild(option);
-                                            }
-                                          
-
-                                        </script>
-
-
-
-
 
 
 
                                     </form>
+                                   
                                 </div>
                             </div>
                         </div>
@@ -324,28 +371,37 @@
     </div>
 
     <div class="card-footer" style="text-align: right;">
-        <button id="form_save" type="submit" class="btn btn-primary btn-sm">
+        <button id="form_save" type="submit" value="Save" class="btn btn-outline-primary btn-lg">
             <i class="far fa-save"></i> &nbsp;Save
         </button>
-        <button id="form_save_publish" type="submit" class="btn btn-primary btn-sm">
-            <i class="zmdi zmdi-upload"></i>&nbsp;&nbsp;Publish
+        <button id="form_save_publish" type="submit" value="Publish" class="btn btn-primary btn-lg">
+            <i class="zmdi zmdi-upload"></i>&nbsp;&nbsp;Publish Now
         </button>
+    </div>
 
         <!-- Jquery JS-->
-        <script src="../vendor/jquery-3.2.1.min.js"></script>
+        <!--                <script src="../vendor/jquery-3.2.1.min.js"></script>-->
 
+        <script src="http://code.jquery.com/ui/1.11.0/jquery-ui.js"></script>
+
+
+        <!--
+
+        <script src="../dist/js/datepicker.min.js"></script>
+        <script src="../dist/js/i18n/datepicker.en.js"></script>
+-->
 
         <!-- Bootstrap JS-->
         <script src="../vendor/bootstrap-4.1/popper.min.js"></script>
         <script src="../vendor/bootstrap-4.1/bootstrap.min.js"></script>
-        <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
-        <script src="../js/moment.js"></script>
+        <!--        <script src="https://code.jquery.com/jquery-3.3.1.js"></script>-->
 
+        <!--         <script src="../vendor/jquery-3.2.1.min.js"></script>-->
 
-        <!--        <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.4/js/bootstrap-datepicker.min.js"></script>-->
-
+        <!--
         <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
         <script src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js"></script>
+-->
         <!-- Vendor JS       -->
         <script src="../vendor/slick/slick.min.js">
         </script>

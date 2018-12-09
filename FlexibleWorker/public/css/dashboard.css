@@ -2,7 +2,10 @@ html {
   overflow: hidden; }
 
 html, body {
+    min-height: 100%;
+    min-width: 100%;
     height: 100%;
+    width: 100%;
     padding: 0;
     margin: 0;
     background-color:#e5e5e5;
@@ -21,11 +24,11 @@ body {
 
 #navbar_space{
     width: 100%;
-    height: 8%;
+    height: 7.4vh;
 }
 
 #my_navbar{
-    width: 100vw;
+    min-width: 100vw;
     height: 7.4vh;
     display: flex;
     position: fixed;
@@ -34,16 +37,27 @@ body {
     background-color: #f5f5f5;
     border-bottom: 5px solid #333333;
     z-index: 5;
+    padding-left: 0px;
+    padding-right: 0px;
 }
 
-.navdiv {
-    min-width: 33vw;
+.row{
+    min-width: 100%;
+}
+
+.col-2{
+    padding-left: 5px !important;
+    padding-right: 5px !important;
+}
+
+.#fedex {
+    text-align: left;
 }
 
 #fedex_logo{
     margin-top:7px;
-    margin-left:7px;
-    width:7vh;
+    padding-left:7px;
+    width:10vh;
 }
 
 #title{
@@ -56,6 +70,18 @@ body {
     color:#333333;  
 }
 
+@media screen and (min-width: 601px) {
+  #navbar_title {
+    font-size: 4vh;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  #navbar_title {
+    font-size: 16px;
+  }
+}
+
 #user_div{
     text-align: right;
 }
@@ -63,7 +89,6 @@ body {
 #user_but{
     color:#333333;
     text-decoration: none;
-    padding-right: 10px;
 }
 
 #users_icon{
@@ -71,28 +96,55 @@ body {
     width:4vh;
 }
 
-.quarter{
-    display: flex;
-    justify-content: top;
-    align-items: center;
-    flex-direction: column;
+.container-fluid{
+    max-height: 92.6vh;
+    overflow-y: auto;
+}
+
+.col-xl-6{
+    outline: 1px solid #E5E5E5;
+}
+
+.col-11{
+    max-height: 14em;
 }
 
 .panel{
-    min-width: 45vw;
-    min-height: 28vh;
+    display:inline-block;
+    margin-top: 10px;
+    min-width: 100%;
+    min-height: 100%;
+    width: 100%;
+    height: 100%;
     text-align: center;
     vertical-align: middle;
-    line-height: 30vh;
-    font-size: 4.5vw;
+    line-height: 14vw;
     color:#333333;
     text-decoration: none;
+    border-style:solid;
+	border-color:#bbb #888 #666 #aaa;
+	border-width:3px 4px 4px 3px;
+    border-radius: 12px;
+    box-shadow: 0 0 5px -1px rgba(0,0,0,0.2);
+    cursor:pointer;
+}
+
+@media screen and (min-width: 601px) {
+  .panel {
+    font-size: 80px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .panel {
+    font-size: 30px;
+  }
 }
 
 .more_info{
     min-height: 15vh;
     text-align: center;
-    font-size: 1.9vh;
+    font-size: 2.7vh;
 }
 
 #upper_left{
@@ -105,12 +157,13 @@ body {
 
 #ulpanel{
     background-color: #ffd700 ;
-    margin-top: 2vh;
 }
 
 #ulpanel:hover{
     cursor: pointer;
     background-color: #ffc107;
+    text-decoration: none;
+    color:#333333;
 }
 
 #upper_right{
@@ -124,12 +177,13 @@ body {
 
 #urpanel{
     background-color: #63c76a;
-    margin-top: 2vh;
 }
 
 #urpanel:hover{
     cursor: pointer;
     background-color: #32cd32;
+    text-decoration: none;
+    color:#333333;
 }
 
 #lower_left{
@@ -149,6 +203,8 @@ body {
 #blpanel:hover{
     cursor: pointer;
     background-color: #0094d5;
+    text-decoration: none;
+    color:#333333;
 }
 
 #lower_right{
@@ -168,6 +224,8 @@ body {
 #brpanel:hover{
     cursor: pointer;
     background-color: #f5002d ;
+    text-decoration: none;
+    color:#333333;    
 }
 
 #vertical_line{

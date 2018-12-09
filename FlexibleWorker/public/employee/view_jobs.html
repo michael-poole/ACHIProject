@@ -16,7 +16,7 @@
     <link href="../vendor/font-awesome-5/css/fontawesome-all.min.css" rel="stylesheet" media="all">
     <link href="../vendor/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" media="all">
 
-    <!-- Bootstrap CSS-->
+    <!-- Bootstrap CSS / jQuery -->
     <link href="../vendor/bootstrap-4.1/bootstrap.min.css" rel="stylesheet" media="all">
     <link href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
@@ -24,7 +24,8 @@
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/gijgo@1.9.10/js/gijgo.min.js" type="text/javascript"></script>
     <link href="https://cdn.jsdelivr.net/npm/gijgo@1.9.10/css/gijgo.min.css" rel="stylesheet" type="text/css" />
-
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+	
     <!-- Vendor CSS-->
     <link href="../vendor/animsition/animsition.min.css" rel="stylesheet" media="all">
     <link href="../vendor/bootstrap-progressbar/bootstrap-progressbar-3.3.4.min.css" rel="stylesheet" media="all">
@@ -34,10 +35,26 @@
     <link href="../vendor/select2/select2.min.css" rel="stylesheet" media="all">
     <link href="../vendor/perfect-scrollbar/perfect-scrollbar.css" rel="stylesheet" media="all">
 
-
     <!-- Main CSS-->
     <link href="../css/theme.css" rel="stylesheet" media="all">
-
+	
+	<!-- Firebase -->
+    <script src="https://www.gstatic.com/firebasejs/5.2.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.2.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.2.0/firebase-firestore.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/5.7.0/firebase.js"></script>
+	<script>
+		var config = {
+			apiKey: "AIzaSyAC8o-CsLGlB2PRqLqCijw8DbyF9E51iy8",
+			authDomain: "flexiblescheduler-fdf1e.firebaseapp.com",
+			databaseURL: "https://flexiblescheduler-fdf1e.firebaseio.com",
+			projectId: "flexiblescheduler-fdf1e",
+			storageBucket: "flexiblescheduler-fdf1e.appspot.com",
+			messagingSenderId: "236803659888"
+		};
+		firebase.initializeApp(config);
+	</script>
+	<script src="../js/index.js"></script>
 </head>
 
 <body class="animsition">
@@ -123,7 +140,7 @@
                 <div class="container-fluid">
                     <div class="header-wrap">
                         <form class="form-header" action="" method="POST">
-                            <input class="au-input au-input--xl" type="text" name="search" placeholder="Find Jobs..." />
+                            <input class="au-input au-input--xl" type="text" id="jobSearch" onkeyup="autoSearch()" name="search" placeholder="Search job title..." />
                             <button class="au-btn--submit" type="submit">
                                 <i class="zmdi zmdi-search"></i>
                             </button>
@@ -180,7 +197,7 @@
                                     </div>
                                 </form>
                             </div>
-                        </div>                              
+                        </div>
                         <div class="table-data__tool-right">
                             <button class="au-btn au-btn-icon au-btn--green au-btn--small">
                             <i class="zmdi zmdi-refresh"></i>Refresh</button>
@@ -194,203 +211,27 @@
                             <div class="col-lg-12">
 
                                 <!-- DATA TABLE -->
-
                                 <div class="table-responsive table-responsive-data2">
-                                    <table id="managerTable" class="table table-data2">
+                                    <table id="AllJobs" class="display table-striped" style="width:100%">
                                         <thead>
                                             <tr>
-                                                <th class="title">Title</th>
-                                                <th class="title">Description</th>
-                                                <th class="title">Date & Time</th>
-                                                <th class="title">Location</th>
-                                                <th class="title">Status</th>
-                                                <th class="title">Actions</th>
+                                                <th class="jobs-table" width="15%">Title</th>
+                                                <th class="jobs-table" width="45%">Description</th>
+                                                <th class="jobs-table" width="10%">Date & Time</th>
+                                                <th class="jobs-table" width="10%">Location</th>
+                                                <th class="jobs-table">Status</th>
+                                                <th class="jobs-table">Actions</th>
                                             </tr>
                                         </thead>
                                         <tbody>
-                                                <tr>
-                                                        <td>
-                                                            <div class="table-data__info">
-                                                                <h6>Courier</h6>
-                                                            </div>
-                                                        </td>
-                                                        <td>
-                                                            <div class="table-data__info">
-                                                                Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                                                                sed do eiusmod tempor incididunt ut labore et dolore magna
-                                                                aliqua. Eget dolor morbi non arcu risus quis varius quam.
-                                                            </div>
-                                                        </td>
-        
-                                                        <td>
-                                                            <div class="table-data__info">
-                                                                <h6>12/20/2018</h6>
-                                                                &nbsp;
-                                                                <h6>08:00 AM - 12:00 PM</h6>
-                                                            </div>
-                                                        </td>
-                                                        <td>
-                                                            <div class="table-data__info">
-                                                                <h6>Memphis,TN</h6>
-                                                            </div>
-                                                        </td>
-                                                        <td>
-                                                            <span class="role unapplied">Open</span>
-                                                        </td>
-                                                        <td>
-                                                            <div class="table-data-feature">
-                                                
-                                                                <button class="item" data-toggle="tooltip" data-placement="top"
-                                                                    title="Edit">
-                                                                    <i class="zmdi zmdi-edit"></i>
-                                                                </button>
-                                                                <button class="item" data-toggle="tooltip" data-placement="top"
-                                                                    title="Apply">
-                                                                    <i class="zmdi zmdi-check-square"></i>
-                                                                </button>
-        
-                                                            </div>
-                                                        </td>
-        
-        
-                                                    </tr>
-                                            <tr>
-                                                <td>
-                                                    <div class="table-data__info">
-                                                        <h6>Courier</h6>
-                                                    </div>
-                                                </td>
-                                                <td>
-                                                    <div class="table-data__info">
-                                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                                                        sed do eiusmod tempor incididunt ut labore et dolore magna
-                                                        aliqua. Eget dolor morbi non arcu risus quis varius quam.
-                                                    </div>
-                                                </td>
-
-                                                <td>
-                                                    <div class="table-data__info">
-                                                        <h6>12/20/2018</h6>
-                                                        &nbsp;
-                                                        <h6>08:00 AM - 12:00 PM</h6>
-                                                    </div>
-                                                </td>
-                                                <td>
-                                                    <div class="table-data__info">
-                                                        <h6>Memphis,TN</h6>
-                                                    </div>
-                                                </td>
-                                                <td>
-                                                    <span class="role unapplied">Open</span>
-                                                </td>
-                                                <td>
-                                                    <div class="table-data-feature">
-                                                            <button class="item" data-toggle="tooltip" data-placement="top"
-                                                            title="Edit">
-                                                            <i class="zmdi zmdi-edit"></i>
-                                                        </button>
-                                                        <button class="item" data-toggle="tooltip" data-placement="top"
-                                                            title="Apply">
-                                                            <i class="zmdi zmdi-check-square"></i>
-                                                        </button>
-
-                                                    </div>
-                                                </td>
-
-
-                                            </tr>
-                                            <tr>
-                                                    <td>
-                                                        <div class="table-data__info">
-                                                            <h6>Courier</h6>
-                                                        </div>
-                                                    </td>
-                                                    <td>
-                                                        <div class="table-data__info">
-                                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                                                            sed do eiusmod tempor incididunt ut labore et dolore magna
-                                                            aliqua. Eget dolor morbi non arcu risus quis varius quam.
-                                                        </div>
-                                                    </td>
-    
-                                                    <td>
-                                                        <div class="table-data__info">
-                                                            <h6>12/20/2018</h6>
-                                                            &nbsp;
-                                                            <h6>08:00 AM - 12:00 PM</h6>
-                                                        </div>
-                                                    </td>
-                                                    <td>
-                                                        <div class="table-data__info">
-                                                            <h6>Memphis,TN</h6>
-                                                        </div>
-                                                    </td>
-                                                    <td>
-                                                        <span class="role applied">Applied</span>
-                                                    </td>
-                                                    <td>
-                                                        <div class="table-data-feature">
-                                            
-                                                            <button class="item" data-toggle="tooltip" data-placement="top"
-                                                                title="Edit">
-                                                                <i class="zmdi zmdi-edit"></i>
-                                                            </button>
-                                                            <button class="item" data-toggle="tooltip" data-placement="top"
-                                                                title="Apply">
-                                                                <i class="zmdi zmdi-check-square"></i>
-                                                            </button>
-    
-                                                        </div>
-                                                    </td>
-    
-    
-                                                </tr>
-                                                <tr>
-                                                        <td>
-                                                            <div class="table-data__info">
-                                                                <h6>Courier</h6>
-                                                            </div>
-                                                        </td>
-                                                        <td>
-                                                            <div class="table-data__info">
-                                                                Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                                                                sed do eiusmod tempor incididunt ut labore et dolore magna
-                                                                aliqua. Eget dolor morbi non arcu risus quis varius quam.
-                                                            </div>
-                                                        </td>
-        
-                                                        <td>
-                                                            <div class="table-data__info">
-                                                                <h6>12/20/2018</h6>
-                                                                &nbsp;
-                                                                <h6>08:00 AM - 12:00 PM</h6>
-                                                            </div>
-                                                        </td>
-                                                        <td>
-                                                            <div class="table-data__info">
-                                                                <h6>Memphis,TN</h6>
-                                                            </div>
-                                                        </td>
-                                                        <td>
-                                                            <span class="role applied">Applied</span>
-                                                        </td>
-                                                        <td>
-                                                            <div class="table-data-feature">
-                                                
-                                                                <button class="item" data-toggle="tooltip" data-placement="top"
-                                                                    title="Edit">
-                                                                    <i class="zmdi zmdi-edit"></i>
-                                                                </button>
-                                                                <button class="item" data-toggle="tooltip" data-placement="top"
-                                                                    title="Apply">
-                                                                    <i class="zmdi zmdi-check-square"></i>
-                                                                </button>
-        
-                                                            </div>
-                                                        </td>
-        
-        
-                                                    </tr>
+											<tr class="jobsTable">
+												<td data-prop="jobTitle" class="jobs-table"></td>
+												<td data-prop="description" class="jobs-table"></td>
+												<td data-prop="jobDate" class="jobs-table"></td>
+												<td data-prop="jobAddress" class="jobs-table"></td>
+												<td data-prop="jobStatus" class="jobs-table"></td>
+												<td></td>
+											</tr>
                                         </tbody>
                                     </table>
                                 </div>
@@ -416,12 +257,31 @@
 
     </div>
 
-    <!-- Jquery JS-->
-    <script src="../vendor/jquery-3.2.1.min.js"></script>
+	<!-- Realtime Search by Job Title (from w3schools) -->
+	<script>
+	function autoSearch() {
+	  var input, filter, table, tr, td, i, txtValue;
+	  input = document.getElementById("jobSearch");
+	  filter = input.value.toUpperCase();
+	  table = document.getElementById("AllJobs");
+	  tr = table.getElementsByTagName("tr");
+	  for (i = 0; i < tr.length; i++) {
+		td = tr[i].getElementsByTagName("td")[0];
+		if (td) {
+		  txtValue = td.textContent || td.innerText;
+		  if (txtValue.toUpperCase().indexOf(filter) > -1) {
+			tr[i].style.display = "";
+		  } else {
+			tr[i].style.display = "none";
+		  }
+		}       
+	  }
+	}
+	</script>
+	
     <!-- Bootstrap JS-->
     <script src="../vendor/bootstrap-4.1/popper.min.js"></script>
     <script src="../vendor/bootstrap-4.1/bootstrap.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
     <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
     <script src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js"></script>
     <!-- Vendor JS       -->
