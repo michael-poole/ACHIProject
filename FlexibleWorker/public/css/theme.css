@@ -83,7 +83,7 @@ p {
 
 .table-responsive {
     padding-right: 1px;
-}
+}   
 
 .card {
     -webkit-border-radius: 3px;
@@ -1342,10 +1342,10 @@ section {
     padding-left: 4px;
 }
 #all_certs option:nth-of-type(even){
-    background-color: #bbcde8 !important;
+    background-color: #f5f9ff !important;
 }
 #rec_certs option:nth-of-type(even){
-    background-color: #bbcde8 !important;
+    background-color: #f5f9ff !important;
 }
 
 .card {
@@ -4431,7 +4431,7 @@ section {
 /* Jobs table formatting */
 .jobs-table {
 	padding: 10px !important;
-	text-align: left  !important;
+	text-align: left  !important;  
 }
 
 .table-responsive.table--no-card {
@@ -4441,6 +4441,10 @@ section {
     -webkit-box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.1);
     -moz-box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.1);
     box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.1);
+}
+
+.head-row{
+    background-color: #F5F5F5;
 }
 
 .table-earning thead th {
@@ -4476,18 +4480,21 @@ section {
     cursor: pointer;
 }
 
+#AllJobs{
+    border-radius: 10px; 
+}   
+
 .table-striped tbody tr:nth-of-type(odd) {
-    background-color: #b6d6d6;
+    background-color: #f5f9ff !important;
 }
 
 .table-striped tbody tr:nth-of-type(even) {
-    background-color: #f5f5f5;
+    background-color: #fff;
 }
 
 .table-top-countries tbody td {
     white-space: nowrap;
     font-size: 14px;
-    color: #fff;
     padding: 14px 5px;
     border-top: none;
     border-bottom: 1px solid rgba(255, 255, 255, 0.2);
