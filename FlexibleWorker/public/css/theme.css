@@ -4484,11 +4484,11 @@ section {
     border-radius: 10px; 
 }   
 
-.table-striped tbody tr:nth-of-type(odd) {
+.table-striped tbody tr:nth-of-type(even) {
     background-color: #f5f9ff !important;
 }
 
-.table-striped tbody tr:nth-of-type(even) {
+.table-striped tbody tr:nth-of-type(odd) {
     background-color: #fff;
 }
 
