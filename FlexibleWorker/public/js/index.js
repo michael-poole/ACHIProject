@@ -8,6 +8,7 @@
 
         $('#AllJobs').on('click', 'button.edit', edit);
         $('#AllJobs').on('click', 'button.remove', remove);
+		$('#AllJobs').on('click', 'button.apply', apply);
         $('#JobsAdd').click(add);
         $('#JobsForm').submit(save);
     };
@@ -77,6 +78,18 @@
     var add = function (e) {
         e.preventDefault();
         open('');
+    };
+	
+	// on apply
+	var apply = function (e) {
+        e.preventDefault();
+		var id = $(this).parents('tr:first').data('id');
+		db.collection("employees").doc("T2OaMRqWllHYWk2SD0vk").collection("scheduledJobs").add(id).then(function (result) {
+            list();
+        })
+        .catch(function (error) {
+     alert("failed to apply to job");
+        });
     };
 
     // on edit
